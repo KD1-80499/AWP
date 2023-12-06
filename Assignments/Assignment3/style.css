@@ -1,0 +1,27 @@
+body{
+    font-family: Arial, sans-serif;
+    margin: 500px;
+    height: 100px;
+    background-color:whitesmoke;
+    flex-direction: column;
+}
+header{
+    text-align: center;
+    padding: 20px;
+    background-color: beige;
+    color: black;   
+}
+.Container{
+    display: flex;
+    width: 100%;
+    background-color: burlywood;
+    color: black;
+}
+.Video{
+    flex:1;
+    padding: 20px;
+}
+.form{
+    flex: 1;
+    padding: 20px;
+}

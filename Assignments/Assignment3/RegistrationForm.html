@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RegistrationForm</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="text-align: center;">
+    <header style="text-decoration: underline;"><b><h1>Registration Form</h1></b></header>
+    <div class="Container">
+    <div class="Video">
+        <video width="320px" height="240px" controls>
+            <source src="http://127.0.0.1:5502/Assignment3/SwaroopaDevaleResume%20Video.mp4" type="video/mp4">  
+            <source src="movie.webm" type="video/webm">    
+        </video>
+    </div>
+    <div class="form">
+    <form action="server.jsp" method="post">
+  
+    Name :  <input type="text" required="required" placeholder="Name" name="name" />
+    <br/><br/> 
+    BirthDate : <input type="date" required="required"/>
+    <br/><br/>
+    Email : <input type="email" name="MyEmail" pattern="^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9]+$"
+    placeholder="Email" />
+    <br/><br/>
+    Password : <input type="password" name="password"
+    pattern="^[a-zA-Z0-9!@#\$%\^\&*_=+-]{8,12}$/g" />
+    <br/><br/>
+     Address <select>State
+             <option>Maharashtra</option>
+            </select>
+             <select>District
+              <option>Pune</option>  
+             </select>
+             <select>City
+              <option>Pune</option>  
+             </select>
+    </select>
+    <br/><br/>
+    Gender  <input type="radio" name="gender" value="Male">Male
+    <input type="radio" name="gender" value="Female">Female
+    <br/><br/>
+    Upload Photo <input type="file" name="profilePhoto" accept="image/*" required="required" />
+    <br/><br/>
+    Select Your Course  <select>
+        <option>DAC</option>
+        <option>DBDA</option>
+        <option>DITIS</option>
+        <option>DESD</option>
+        <option>DMC</option>
+    </select>
+    <br/><br/>
+
+    <input type="button" value="Register" />
+    <input type="button" value="Clear" />   
+    
+</form>
+</div>
+</div>
+</body>
+</html>

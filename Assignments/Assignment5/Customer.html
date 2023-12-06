@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Customer Details</title>
+</head>
+<body>
+    <center>
+    <header>
+        <h1>Customer Registration</h1>
+    </header>
+    <div style="height: 300px; width: 600px; background-color: antiquewhite;">
+
+        <form action="server.js" method="post">
+         <table>
+            <tr>
+                <td>Cnum:</td>
+                <td>
+                    <input type="number" placeholder="12" id="num" required/>
+                </td>
+                <td>
+                    <div style="color: red; width: 200px" id="cusNumberErrorMsg"></div> 
+                </td>
+            </tr>
+            <tr>
+                <td>Cname:</td>
+                <td>
+                    <input type="text" placeholder="Swaroopa" id="name" required/>
+                </td>
+                <td>
+                    <div style="color: red; width: 200px"  id="nameErrorMsg"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td>
+                    <input type="email" placeholder="swa@gmail.com" id="eMail" required/>
+                </td>
+                <td>
+                    <div style="color: red; width: 200px"id="eMailErrorMsg"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td>
+                    <input type="password" placeholder="***" id="password" required/>
+                </td>
+                <td>
+                    <div style="color: red; width: 200px"  id="passwordErrorMsg"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Confirm_Password</td>
+                <td>
+                    <input type="password" placeholder="***" id="confirmPassword" required/>
+                </td>
+                <td>
+                    <div style="color: red; width: 200px"  id="confirmPasswordErrorMsg"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Mobile_No</td>
+                <td>
+                    <input type="number" placeholder="9873697683" id="mobileNo" required/>
+                </td>
+                <td>
+                    <div style="color: red; width: 200px"  id="mobErrorMsg"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>City</td>
+                <td>
+                    <input type="text" placeholder="Pune" id="city" required/>
+                </td>
+                <td>
+                    <div style="color: red; width: 200px"  id="cityErrorMsg"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>State</td>
+                <td>
+                    <select id="state">
+                        <option>Pune</option>
+                        <option>Karad</option>
+                        <option>Sangli</option>
+                    </select>
+                </td>
+                <td>
+                    <div style="color: red; width: 200px"  id="stateErrorMsg"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Pincode</td>
+                <td>
+                    <input type="number" placeholder="411046" id="pinCode" required/>
+                </td>
+                <td>
+                    <td id="requestErrorMsg"> <div style="color: red; width: 200px"  id="requestErrorMsg"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>Request_Payment_Mode</td>
+                <td>
+                 Credit<input type="checkbox" id="Credit" required value="Credit"/>
+                 Debit<input type="checkbox" id="Debit" required value="Debit"/>
+                 UPI<input type="checkbox" id="UPI" required value="UPI"/>
+                </td>
+                <td>
+                    <td id="requestErrorMsg"> <div style="color: red; width: 200px"  id="requestErrorMsg"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" value="Submit" required onclick="DoRegister()"/>
+                </td>
+            </tr>
+         </table>
+        </form>
+    </div>
+</center>  
+
+<script>
+    function DoRegister() {
+        validate("num", "cusNumberErrorMsg", "Please enter valid customer number");
+
+        validate("name", "nameErrorMsg", "Please enter Valid Name");
+
+        validate("eMail", "eMailErrorMsg", "Please enter email");
+
+        validate("password", "passwordErrorMsg", "Please enter password");
+
+        validate("confirmPassword", "confirmPasswordErrorMsg", "please enter password");
+
+        validate("mobileNo", "mobErrorMsg", "Please enter mobile number");
+
+        validate("city", "cityErrorMsg", "Please enter city name");
+
+        validate("state", "stateErrorMsg", "Please enter state name");
+
+        validate("pinCode", "pinErrorMsg", "Please enter pincode");
+
+        validate("request", "requestErrorMsg", "Please select payment mode");
+
+      }
+
+      function storeData()
+      {
+        var formData={
+
+                "Cnum": document.getElementById("num"),
+                "Cname": document.getElementById("name"),
+                "Cemail": document.getElementById("eMail"),
+                "Cpassword": document.getElementById("password"),
+                "confirmPassword": document.getElementById("confirmPassword"),
+                "Cmob": document.getElementById("mobileNo"),
+                "Ccity": document.getElementById("city"),
+                "State": document.getElementById("state"),
+                "Pincode":document.getElementById("pinCode"),
+                "payment": document.querySelector('input[name="payment"]:checked')
+            };
+            var jsonData=JSON.stringify(formData);
+            localStorage.setItem("customerData",jsonData);
+        }
+
+</script>
+
+<script src="validation.js"></script>
+</body>
+</html>

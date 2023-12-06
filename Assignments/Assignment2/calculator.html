@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body style="text-align: center;">
+
+    <header style="text-align: center; text-decoration:underline;">
+        <b>
+            <h1>Calculator</h1>
+        </b>
+    </header>
+    <br/><br/><br/>
+    <center>
+        <table>
+            <tr>
+                <td colspan="2">Enter Number 1:
+                    <input type="number" id="txtNo1" />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">Enter Number 2:
+                    <input type="number" id="txtNo2" />
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">Result:
+                    <input type="number" id="txtResult" />
+                </td>
+            </tr>
+        </table>
+    </center>
+
+    <br/><br/><br/>
+    
+    <input type="button" value="Addition" onclick="addition()"/>
+    <input type="button" value="Subtraction" onclick="subtraction()" />
+    <input type="button" value="Multiplication" onclick="multiplication()" />
+    <input type="button" value="Division" onclick="division()" />
+
+
+
+    <script>
+
+        function addition() {
+            debugger;
+            var refToTxtNo1 = document.getElementById("txtNo1");
+
+            var refToTxtNo2 = document.getElementById("txtNo2");
+
+            var refToResult = document.getElementById("txtResult");
+
+            refToResult.value = +refToTxtNo1.value + +refToTxtNo2.value;
+            console.log(refToResult.value);
+        }
+
+        function subtraction() {
+            debugger;
+            var refToTxtNo1 = document.getElementById("txtNo1");
+
+            var refToTxtNo2 = document.getElementById("txtNo2");
+
+            var refToResult = document.getElementById("txtResult");
+
+            refToResult.value = refToTxtNo1.value - refToTxtNo2.value;
+            console.log(refToResult.value);
+
+
+        }
+
+        function multiplication() {
+            var refToTxtNo1 = document.getElementById("txtNo1");
+
+            var refToTxtNo2 = document.getElementById("txtNo2");
+
+            var refToResult = document.getElementById("txtResult");
+
+            refToResult.value = refToTxtNo1.value * refToTxtNo2.value;
+            console.log(refToResult.value);
+
+
+        }
+
+        function division() {
+            var refToTxtNo1 = document.getElementById("txtNo1");
+
+            var refToTxtNo2 = document.getElementById("txtNo2");
+
+            var refToResult = document.getElementById("txtResult");
+
+            refToResult.value = refToTxtNo1.value / refToTxtNo2.value;
+            console.log(refToResult.value);
+
+
+        }
+
+    </script>
+
+</body>
+
+</html>

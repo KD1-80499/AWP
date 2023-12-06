@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header><h1>Registration</h1></header>
+   <div class="form"> 
+ <form action="server.jsp" method="post">    
+
+    <table>
+            <tr>
+            <td>Name
+            </td>
+            <td>
+                <input type="text" required="required" name="MyName" placeholder="Enter Name">*
+            </td>
+        </tr>
+        <tr>
+            <td>
+                BirthDate
+            </td>
+            <td>
+                <input type="date" required="required" name="MyDOB" placeholder="dd/MM/yyyy">*
+            </td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>
+                <input type="email" required="required" name="MyEmail" placeholder="abc@gmail.com">*
+            </td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>
+                <input type="password" name="password"
+                            pattern="^[a-zA-Z0-9!@#\$%\^\&*_=+-]{8,12}$/g" required="required" />*
+            </td>
+        </tr>
+        <tr>
+            <td>Address</td>
+            <td> <select name="state" required="required">State
+                    <option value="Maharashtra">Maharashtra</option>
+                    <option value="Karnataka">Karnataka</option>
+                   </select>
+                    <select name="City" required="required">District
+                     <option value="Pune">Pune</option>
+                     <option value="Palus">Palus</option>  
+                    </select>
+                    <select name="City" required="required">District
+                        <option value="Pune">Pune</option>
+                        <option value="Palus">Palus</option>  
+                       </select>
+            </td>
+        </tr>
+        <tr>
+            <td>Gender</td>
+            <td>
+                <input type="radio" name="gender" required="required" value="Male">Male
+                <input type="radio" name="gender" required="required" value="Female">Female
+            </td>
+        </tr>
+       <tr>
+        <td>Upload photo</td>
+        <td><input type="file" name="profilePhoto" accept="image/*" required="required" /></td>
+       </tr>
+       <tr>
+        <td>
+            Select Your Course  
+        </td>
+        <td>
+            <select name="Course" required="required">
+                <option value="DAC">DAC</option>
+                <option value="DBDA">DBDA</option>
+                <option value="DITISS">DITIS</option>
+                <option value="DESD">DESD</option>
+                <option value="DMC">DMC</option>
+            </select>
+        </td>
+       </tr> 
+      <tr>
+       <td>
+        <center>
+        <input type="submit" name="btnRegister" value="Register" />
+       </td> 
+  
+       <td>
+        <input type="reset" value="Clear" />
+       </td>
+    </center> 
+      </tr>
+    </table>
+</form>
+</div>
+</div>
+</div>
+</center>
+
+<script src="jquery-3.7.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('form').submit(function(event)
+        {
+            var isValid=true;
+
+            $('input[type="text"],input[type="date"],input[type="email"],input[type="password"],select,input[type="file"],input[type="radio"]').each(function(){
+            if(!$(this).val()){
+                var isValid= false;
+            }else{
+                $(this).removeClass('invalid');
+            }
+        });
+
+        if(!isValid){
+            event.preventDefault();
+            alert("Please fill in all required fields.");
+        }
+    })
+    });
+</script>
+</body>
+</html>
